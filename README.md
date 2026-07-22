@@ -87,5 +87,6 @@ Remove it in Magisk and reboot. The kernel default is restored, and per-device s
 Credits
 
 Diagnosed and built for the AYN Odin 3 community. Thanks to the folks in #odin3 who kept poking at this instead of writing it off as broken hardware.
+
 License
 MIT
