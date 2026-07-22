@@ -50,26 +50,36 @@ Then the real test: leave the screen untouched for a few minutes and tap it.
 Configuration
 Everything lives in /data/adb/ds_touch_keeper/config.conf:
 Setting
+
 Purpose
 TARGET_MODE
 match (by USB ID, default), hid (any HID device), or all
+
 MATCH_IDS
 Space-separated vid:pid list. Defaults to 222a:0001
+
 SET_GLOBAL_DEFAULT
 Set the kernel-wide autosuspend default to -1
+
 POLL_INTERVAL
 Watchdog interval in seconds. 0 disables it
+
 VERBOSE
 Log every device touched, not just changes
 Using a different USB-C touch display? Find its ID with:
+
 Code
 Then add vid:pid to MATCH_IDS. Or just set TARGET_MODE=all and skip the lookup.
 Logs are at /data/adb/ds_touch_keeper/keeper.log.
+
 Trade-offs
 Keeping a USB device out of suspend costs a little power. It's minor — and the Dual Screen already draws from your handheld while attached — but it isn't free, which is why the module targets one device by ID instead of pinning the whole bus awake.
+
 If touch still drops after installing this and status.sh shows control=on, then host-side power management isn't the problem and the accessory is sleeping on its own firmware. Nothing on the Android side will fix that one.
+
 Uninstall
 Remove it in Magisk and reboot. The kernel default is restored, and per-device settings reset on re-enumeration.
+
 Credits
 Diagnosed and built for the AYN Odin 3 community. Thanks to the folks in #odin3 who kept poking at this instead of writing it off as broken hardware.
 License
