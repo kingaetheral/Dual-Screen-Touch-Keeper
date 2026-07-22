@@ -1,4 +1,4 @@
-*RDS* Dual Screen Touch Keeper
+*RDS*  Dual Screen Touch Keeper
 
 A Magisk module for the Odin 3 that stops the touchscreen on the Retroid Dual Screen Add-On from going dead after a minute of inactivity.
 
