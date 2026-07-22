@@ -6,8 +6,8 @@ The picture stays. Touch doesn't. Tap it and nothing happens — until you unplu
 What's actually going wrong
 The Dual Screen sends video over DisplayPort Alt Mode and touch over USB. Same cable, two completely separate paths — which is why the display keeps working while touch dies.
 The touch controller enumerates as a normal USB device:
-Code
 
+Code
 Android's USB power management then puts it to sleep. On the Odin 3, the device ships with a 60,000 ms autosuspend delay, sitting on top of a kernel-wide default of 2 seconds. Once the touch controller goes idle past that window, the kernel suspends it and it drops off the bus. The video feed never notices, because it isn't USB.
 That's the whole bug. It isn't faulty hardware, and it isn't something AYN or Retroid needs to patch — it's stock Linux power management doing exactly what it was told.
 What the module does
