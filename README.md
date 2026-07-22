@@ -1,4 +1,4 @@
-*RDS*  Dual Screen Touch Keeper
+I'm*RDS*  Dual Screen Touch Keeper
 
 A Magisk module for the Odin 3 that stops the touchscreen on the Retroid Dual Screen Add-On from going dead after a minute of inactivity.
 
@@ -75,14 +75,17 @@ Then add vid:pid to MATCH_IDS. Or just set TARGET_MODE=all and skip the lookup.
 Logs are at /data/adb/ds_touch_keeper/keeper.log.
 
 Trade-offs
+
 Keeping a USB device out of suspend costs a little power. It's minor — and the Dual Screen already draws from your handheld while attached — but it isn't free, which is why the module targets one device by ID instead of pinning the whole bus awake.
 
 If touch still drops after installing this and status.sh shows control=on, then host-side power management isn't the problem and the accessory is sleeping on its own firmware. Nothing on the Android side will fix that one.
 
 Uninstall
+
 Remove it in Magisk and reboot. The kernel default is restored, and per-device settings reset on re-enumeration.
 
 Credits
+
 Diagnosed and built for the AYN Odin 3 community. Thanks to the folks in #odin3 who kept poking at this instead of writing it off as broken hardware.
 License
 MIT
